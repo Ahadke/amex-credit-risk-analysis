@@ -1,0 +1,12 @@
+.env
+.venv/
+.venv312/
+__pycache__/
+.ipynb_checkpoints/
+data/raw/
+data/raw/*.csv
+*.joblib
+.DS_Store
+*.pyc
+.venv312/
+data/processed/*.parquet
