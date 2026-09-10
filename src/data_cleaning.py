@@ -1,31 +1,23 @@
-import os
+import sys
 from pathlib import Path
 
 import pandas as pd
 from sqlalchemy import create_engine, text
-from dotenv import load_dotenv
+
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from src.config import PROJECT_ROOT, postgres_url
 
 
 # This file handles the raw-data-to-PostgreSQL loading step.
 # We keep the raw tables close to the downloaded Kaggle data
 # and let cleaning.sql create properly typed warehouse tables later.
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-
-load_dotenv(PROJECT_ROOT / ".env")
+# Cloud loading is a later step and does not replace this local path.
 
 
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "amex_credit_risk")
-DB_USER = os.getenv("DB_USER", "ahadke")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "")
-
-
-DATABASE_URL = (
-    f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}"
-    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-)
+DATABASE_URL = postgres_url()
 
 
 engine = create_engine(

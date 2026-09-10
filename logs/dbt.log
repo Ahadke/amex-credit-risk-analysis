@@ -1,0 +1,60 @@
+[0m21:45:37.584207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c639070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaaa4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaa9e50>]}
+
+
+============================== 21:45:37.586248 | b3832d6f-dea0-4046-a44c-e8db64b52581 ==============================
+[0m21:45:37.586248 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:45:37.586468 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'static_parser': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/ahadke/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'debug': 'False', 'use_colors': 'True', 'version_check': 'True', 'introspect': 'True', 'empty': 'None', 'target_path': 'None', 'invocation_command': 'dbt init amex_dbt', 'cache_selected_only': 'False', 'maximum_seed_size_mib': '1', 'fail_fast': 'False', 'quiet': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'log_path': 'logs', 'log_format': 'default', 'warn_error': 'None'}
+[0m21:45:37.593024 [info ] [MainThread]: Creating dbt configuration folder at /Users/ahadke/.dbt
+[0m21:45:37.593751 [debug] [MainThread]: Starter project path: /Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/include/starter_project
+[0m21:45:37.596887 [info ] [MainThread]: Setting up your profile.
+[0m21:46:44.938034 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m21:46:44.938325 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m21:46:44.938439 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m21:47:31.257007 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m21:47:31.261778 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/cli/requires.py", line 144, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/cli/main.py", line 504, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/task/init.py", line 363, in run
+    self.setup_profile(profile_name)
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/task/init.py", line 265, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/task/init.py", line 182, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/task/init.py", line 166, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/dbt/task/init.py", line 132, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/click/termui.py", line 262, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ahadke/Documents/Project3/amex_credit_risk/.venv312/lib/python3.12/site-packages/click/termui.py", line 245, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m21:47:31.277614 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 113.72458, "process_in_blocks": "0", "process_kernel_time": 0.232679, "process_mem_max_rss": "226836480", "process_out_blocks": "0", "process_user_time": 1.152798}
+[0m21:47:31.279470 [debug] [MainThread]: Command `dbt init` failed at 21:47:31.279370 after 113.73 seconds
+[0m21:47:31.279805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eaaa360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115ad9910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115516ed0>]}
+[0m21:47:31.280072 [debug] [MainThread]: Flushing usage events
+[0m21:47:31.592465 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:47:34.695364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1c6000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d54c890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d54c230>]}
+
+
+============================== 21:47:34.697506 | 45c82596-34ae-4ffe-a073-467f38feaacc ==============================
+[0m21:47:34.697506 [info ] [MainThread]: Running with dbt=1.12.4
+[0m21:47:34.697734 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'log_cache_events': 'False', 'debug': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'fail_fast': 'False', 'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'introspect': 'True', 'log_path': 'logs', 'invocation_command': 'dbt init amex_dbt', 'profiles_dir': '/Users/ahadke/.dbt', 'log_format': 'default', 'write_json': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'printer_width': '80'}
+[0m21:47:34.705008 [info ] [MainThread]: A project called amex_dbt already exists here.
+[0m21:47:34.706140 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.04329029, "process_in_blocks": "0", "process_kernel_time": 0.117562, "process_mem_max_rss": "137035776", "process_out_blocks": "0", "process_user_time": 0.827587}
+[0m21:47:34.706346 [debug] [MainThread]: Command `dbt init` succeeded at 21:47:34.706306 after 0.04 seconds
+[0m21:47:34.706469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d55cce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d517ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d54c800>]}
+[0m21:47:34.706639 [debug] [MainThread]: Flushing usage events
+[0m21:47:34.996811 [debug] [MainThread]: An error was encountered while trying to flush usage events

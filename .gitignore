@@ -1,4 +1,7 @@
 .env
+.env.local
+.env.*
+!.env.example
 .venv/
 .venv312/
 __pycache__/
@@ -8,5 +11,11 @@ data/raw/*.csv
 *.joblib
 .DS_Store
 *.pyc
-.venv312/
 data/processed/*.parquet
+
+# Cloud credential files
+.aws/
+*.pem
+*.p8
+snowflake_key.p8
+credentials.json

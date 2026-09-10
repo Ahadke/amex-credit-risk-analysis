@@ -1,0 +1,18 @@
+# Non-secret cloud resource names. Credentials stay in .env.
+# Replace placeholders after you create the AWS bucket and Snowflake account.
+
+aws:
+  region: us-west-2
+  bucket: REPLACE_WITH_S3_BUCKET
+  sample_prefix: amex/sample
+
+snowflake:
+  warehouse: AMEX_WH
+  database: AMEX_CREDIT_RISK
+  schema: PUBLIC
+  role: SYSADMIN
+
+postgres:
+  database: amex_credit_risk
+  host: localhost
+  port: 5432
