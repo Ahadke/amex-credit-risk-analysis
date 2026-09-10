@@ -1,0 +1,23 @@
+artifact_path: /Users/ahadke/Documents/Project3/amex_credit_risk/notebooks/mlruns/1/models/m-da0b7b97b75f4fb19f2d1b3fe5d85da3/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.16.0
+model_id: m-da0b7b97b75f4fb19f2d1b3fe5d85da3
+model_size_bytes: 9185
+model_uuid: m-da0b7b97b75f4fb19f2d1b3fe5d85da3
+prompts: null
+run_id: bc39d354e5d94d55b8eba46a97a178d3
+utc_time_created: '2026-09-10 05:47:06.458316'

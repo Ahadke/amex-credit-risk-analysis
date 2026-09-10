@@ -16,3 +16,6 @@ python-dotenv
 streamlit
 pyarrow
 kaggle
+boto3
+snowflake-connector-python
+pytest==9.1.1

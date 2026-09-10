@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: amex
+    database: AMEX_CREDIT_RISK
+    schema: ANALYTICS
+    tables:
+      - name: TRAIN_ANALYTICS_SAMPLE

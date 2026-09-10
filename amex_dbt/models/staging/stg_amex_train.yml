@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_amex_train
+    columns:
+      - name: '"customer_ID"'
+        data_tests:
+          - not_null
+
+      - name: TARGET
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]
